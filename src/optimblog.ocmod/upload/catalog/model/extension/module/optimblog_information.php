@@ -54,7 +54,7 @@ class ModelExtensionModuleOptimBlogInformation extends Model {
 			}
 
 			if (!empty($data['filter_filter'])) {
-				$sql .= " LEFT JOIN " . DB_PREFIX . "information_filter if ON (i2c.information_id = if.information_id) LEFT JOIN " . DB_PREFIX . "information i ON (if.information_id = i.information_id)";
+				$sql .= " LEFT JOIN " . DB_PREFIX . "information_filter iff ON (i2c.information_id = iff.information_id) LEFT JOIN " . DB_PREFIX . "information i ON (iff.information_id = i.information_id)";
 			} else {
 				$sql .= " LEFT JOIN " . DB_PREFIX . "information i ON (i2c.information_id = i.information_id)";
 			}
@@ -80,7 +80,7 @@ class ModelExtensionModuleOptimBlogInformation extends Model {
 					$implode[] = (int)$filter_id;
 				}
 
-				$sql .= " AND if.filter_id IN (" . implode(',', $implode) . ")";
+				$sql .= " AND iff.filter_id IN (" . implode(',', $implode) . ")";
 			}
 		}
 
@@ -190,7 +190,7 @@ class ModelExtensionModuleOptimBlogInformation extends Model {
 			}
 
 			if (!empty($data['filter_filter'])) {
-				$sql .= " LEFT JOIN " . DB_PREFIX . "information_filter if ON (i2c.information_id = if.information_id) LEFT JOIN " . DB_PREFIX . "information i ON (if.information_id = i.information_id)";
+				$sql .= " LEFT JOIN " . DB_PREFIX . "information_filter iff ON (i2c.information_id = iff.information_id) LEFT JOIN " . DB_PREFIX . "information i ON (iff.information_id = i.information_id)";
 			} else {
 				$sql .= " LEFT JOIN " . DB_PREFIX . "information i ON (i2c.information_id = i.information_id)";
 			}
@@ -216,7 +216,7 @@ class ModelExtensionModuleOptimBlogInformation extends Model {
 					$implode[] = (int)$filter_id;
 				}
 
-				$sql .= " AND if.filter_id IN (" . implode(',', $implode) . ")";
+				$sql .= " AND iff.filter_id IN (" . implode(',', $implode) . ")";
 			}
 		}
 
